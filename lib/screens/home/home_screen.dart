@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
 import '/constants.dart';
 import 'components/categories.dart';
+import 'components/new_arrival_products.dart';
+import 'components/popular_products.dart';
 import 'components/search_form.dart';
-import 'components/section_title.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -44,7 +46,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(defaultPadding),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -72,10 +74,11 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(
               height: defaultPadding,
             ),
-            SectionTitle(
-              title: "New Arrival",
-              pressSeeAll: () {},
+            const NewArrival(),
+            const SizedBox(
+              height: defaultPadding,
             ),
+            const Popular(),
           ],
         ),
       ),
