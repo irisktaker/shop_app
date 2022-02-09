@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '/constants.dart';
 import 'components/categories.dart';
 import 'components/search_form.dart';
+import 'components/section_title.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -68,6 +69,13 @@ class HomeScreen extends StatelessWidget {
               child: SearchForm(),
             ),
             const Categories(),
+            const SizedBox(
+              height: defaultPadding,
+            ),
+            SectionTitle(
+              title: "New Arrival",
+              pressSeeAll: () {},
+            ),
           ],
         ),
       ),
