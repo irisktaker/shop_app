@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:shop_app/constants.dart';
-
-import 'components/product_card.dart';
+import '/constants.dart';
+import 'components/categories.dart';
 import 'components/search_form.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -68,25 +67,7 @@ class HomeScreen extends StatelessWidget {
               ),
               child: SearchForm(),
             ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: List.generate(
-                  5,
-                  (index) => Padding(
-                    padding: const EdgeInsets.only(
-                      right: defaultPadding,
-                    ),
-                    child: CategoryCard(
-                      title: "Shirt",
-                      icon: "assets/icons/shirt.svg",
-                      press: () {},
-                      //     ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
+            const Categories(),
           ],
         ),
       ),
