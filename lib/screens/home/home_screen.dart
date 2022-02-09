@@ -68,10 +68,24 @@ class HomeScreen extends StatelessWidget {
               ),
               child: SearchForm(),
             ),
-            CategoryCard(
-              title: "Shirt",
-              icon: "assets/icons/shirt.svg",
-              press: (){},
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: List.generate(
+                  5,
+                  (index) => Padding(
+                    padding: const EdgeInsets.only(
+                      right: defaultPadding,
+                    ),
+                    child: CategoryCard(
+                      title: "Shirt",
+                      icon: "assets/icons/shirt.svg",
+                      press: () {},
+                      //     ),
+                    ),
+                  ),
+                ),
+              ),
             ),
           ],
         ),
